@@ -55,7 +55,7 @@ def index():
 @app.route("/game")
 def game():
     # 2. Prepare oauth url to send to callback
-    url = f"https://gitlab.com/oauth/authorize?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&state={os.urandom(16).hex()}&scope=read_user&response_type=code#content-body"
+    url = f"https://gitlab.com/oauth/authorize?client_id=28810f33d312448f32a2d01548635f40efc02780180bacd6b48c0d69197ed03e&redirect_uri=https%3A%2F%2Fvercel.com%2Fapi%2Fnow%2Fregistration%2Fgitlab%2Fcallback&response_type=code&scope=api&state=717b6dd03033f5fcd59aa2654db96b493a4c6b893e15181e27afef604312909269be41e0da1e4a113113786ae67e8e8a7e60f673a614a7240b762c46ebf504c744406295b7632371b09ace448539c1309f87ab9c5be532db40859764845b315fa18c00a138179263ec284e5fea7f250cc843753fa387c70b585b4053382b5215b88ec3d0ccde46084705e0f2f20241805c579994ff57fa850917dac69f9d9c8e7a826a353afd76906303fac52ce7ad7bc14bcc"
 
     return render_template("game.html", url=url, button=button, popup_size=POPUP_SIZE, use_history_back=USE_HISTORY_BACK)
 
